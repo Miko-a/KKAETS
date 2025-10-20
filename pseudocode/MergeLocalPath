@@ -1,0 +1,5 @@
+1: function MERGE(goal_start, goal, best_path)
+2:   path1 ← Computes the line between the local_start and end points
+3:   path ← [best_path; path1]
+4:   return path
+5: end function
