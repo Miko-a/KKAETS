@@ -1,0 +1,27 @@
+1: function A-STAR(start, goal, map)
+2:   close ← NULL
+3:   open ← start
+4:   G[start] ← g[start] = 0,H[start] ← h[start]
+5:   F[start] ← H[start]
+6:   while open ̸= ∅ do
+7:     neighbor_Node ← Select the node with the lowest F value in the open list
+8:     open ← open\{current_Node}
+9:     close ← close ∪ {current_Node}
+10:     if current_Node = goal then
+11:       return best_path
+12:     end if
+13:     current_Node ← Compute the set of vertices surrounding the current vertex
+14:     for N ∈ neighbor_Nodes do
+15:       if N ∈ close then
+16:         do nothing
+17:       else if N ∈ open then
+18:       G[N_new_calculated], H, F ← Calculate the G, H, and F values of N
+19:       if G[N ∈ open] > G[N_new_calculated] then
+20:         Parent node of N ← current_Node
+21:       end if
+22:       else
+23:         Parent node of N ← current_Node
+24:       end if
+25:     end for
+26:   end while
+27: end function
