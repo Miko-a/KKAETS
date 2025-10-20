@@ -1,0 +1,20 @@
+1: function OBP(start, goal, map, obstacle)
+2:    Line ← Calculate the straight line from the start point to the end point
+3:    cross_p, boundary_p, dis, local_stat ← ∅
+4:    i ← 0
+5:    for each obs ∈ obstacle do
+6:      cross_p ← ispass_line[obs, Line]
+7:    end for
+8:    if cross_p = ∅ then
+9:      local_start ← start
+10:   else
+11:     boundary_p ← boundary(cross_p(1))
+12:     for each boundary_p do
+13:       dis ← (boundary_p − cross_p(1))2
+14:     end for
+15:     for each dis do
+16:       i ← f ind(dis = min(dis))
+17:     end for
+18:     local_start ← boundary_p(i)
+19:   end if
+20: return local_
